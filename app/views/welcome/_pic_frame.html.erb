@@ -1,0 +1,16 @@
+<h1><%=@guess_message%></h1>
+<div class = "pics_frame">
+
+<% @guess_images.each do |key,value| %>
+ <div class="pic">
+  <img src='<%=value%>'/>
+  </div>
+<%end%>
+</div>
+<form action = "choose_image" 
+      method = "POST">
+<button type='submit'
+ value='start'
+ name='submit'>kewl beans!</button>
+<input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>"/>
+</form>

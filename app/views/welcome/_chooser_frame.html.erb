@@ -1,0 +1,31 @@
+<h2><%=@user_name%>'s Score: <%=session['win_counter']%></h2>
+<form action = "choose_image" 
+      method = "POST"
+      class = "pics_frame">
+      <%x=1%>
+<% @guess_images.each do |key,value| %>
+<button class ='frame'
+ type='submit'
+ name='submit'
+ src=''
+ value='<%=key%>'><%=x%></button>
+ <input type="hidden" name="answer" value="<%=@special_guess%>">
+ <%x+=1%>
+<%end%>
+<input name="authenticity_token" type="hidden" value="<%=form_authenticity_token%>"/>
+</form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class='prompt'>
+<h1><%=@guess_message%></h1>
+<br>
+<br>
+<div class='pic'>
+  <img src = '<%=@guess_images[@special_guess]%>'/>
+</div>

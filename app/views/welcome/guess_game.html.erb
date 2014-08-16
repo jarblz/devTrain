@@ -1,0 +1,14 @@
+<div id='main'>
+
+<br>
+<br>
+<br>
+<%= 
+if !session['guess_counter']
+  render :partial => 'pic_frame' 
+else render :partial => 'chooser_frame'
+end
+%>
+</div>
+
+
